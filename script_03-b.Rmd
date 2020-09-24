@@ -65,8 +65,9 @@ sep_diff <- left_join(sep_old, sep_new, by = "id", suffix = c(".old", ".new")) %
 sep_diff %>%
   arrange(desc(u_grad_diff)) %>%
   head(5) %>%
+  select(title.old, name.old, u_grad.new, u_grad_diff) %>%
+  rename("Title"= name.old, "Number" = title.old, "Enrollment" = u_grad.new, "Change" = u_grad_diff) %>%
   gt()
-sep_diff
 ```
 
 
@@ -77,6 +78,11 @@ sep_diff
 With our actual Preceptor Table, how might we investigate the effect of work assigned in the first two weeks? Would the estimated Average Treatment Effect be accurate? Why or why not?
 
 Make a spreadsheet --- I recommend using Google sheets, but anything will do --- which shows a simple version of that actual Preceptor Table. What are the units? What are the outcomes? What is the treatment? What is the causal effect? You may assign whichever of the 10 classes you like to treatment and the rest to control.
+
+```{r}
+
+```
+
 
 ## Scene 3
 
